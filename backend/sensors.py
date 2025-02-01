@@ -7,47 +7,47 @@
 import RPi.GPIO as GPIO
 import time
 
-# Setup BCM mode
-GPIO.setmode(GPIO.BCM)
+try:
+    # Setup BCM mode
+    GPIO.setmode(GPIO.BOARD)
 
-# Set pins for HC-SR04
-TRIGS = {7}
-ECHO = 11
+    # Set pins for HC-SR04
+    TRIGS = [7]
+    ECHO = 11
 
-GPIO.setup(ECHO, GPIO.IN)
+    GPIO.setup(ECHO, GPIO.IN)
 
-# Initial setup
-for i in range (0, 1):
-    GPIO.setup(TRIGS[i], GPIO.OUT)
+    # Initial setup
+    for i in range (0, 1):
+        GPIO.setup(TRIGS[i], GPIO.OUT)
 
-# Trigger and receive pulse
-for i in range(0, 1):
-    # Reset trig
-    GPIO.output(TRIGS[i], False)
+    # Trigger and receive pulse
+    for i in range(0, 1):
+        GPIO.output(TRIGS[i], GPIO.LOW)
 
-    # Wait .001s and then trigger
-    time.sleep(.001)
-    GPIO.output(TRIGS[i], True)
+        print("Waiting for sensor to settle")
 
-    # Wait .00001s then disable trigger
-    time.sleep(0.00001)
-    GPIO.output(TRIGS[i], False)
+        time.sleep(.5)
 
-    # Set start time while echo input is 0
-    while GPIO.input(ECHO) == 0:
-        pulse_start = time.time()
-    
-    # Set end time while echo input is 1
-    while GPIO.input(ECHO) == 1:
-        pulse_end = time.time()
+        print("Calculating distance")
 
-    # Calculate total pulse duration
-    pulse_duration = pulse_end - pulse_start
+        GPIO.output(TRIGS[i], GPIO.HIGH)
 
-    # Convert pulse duration to distance in cm
-    # 17150 x time = distance ()
-    distance = round((pulse_duration * 17150), 2)
+        time.sleep(0.00001)
 
-    print(distance)
+        GPIO.output(TRIGS[i], GPIO.LOW)
 
-GPIO.cleanup()
+        while GPIO.input(ECHO)==0:
+                pulse_start_time = time.time()
+        while GPIO.input(ECHO)==1:
+                pulse_end_time = time.time()
+
+        pulse_duration = pulse_end_time - pulse_start_time
+        distance = round(pulse_duration * 17150, 2)
+        
+        if distance < 50:
+            print(f"Play note {i}")
+
+finally:
+      GPIO.cleanup()
+
