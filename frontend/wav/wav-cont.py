@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 config = ''
 
-with open('./config.json', 'r') as fin:
+with open('config.json', 'r') as fin:
     data = fin.read()
     config = json.loads(data)
 

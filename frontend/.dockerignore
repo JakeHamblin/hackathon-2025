@@ -33,3 +33,5 @@
 **/.svelte-kit
 LICENSE
 README.md
+
+wav/**
