@@ -1,8 +1,8 @@
 float duration, distance;  
 int length = 2;
 int modules[2][3] = {
-  {2, 3, 4},
-  {5, 6, 7},
+  {2, 4, 5},
+  {3, 6, 7},
 };
 
 void setup() {
@@ -31,12 +31,21 @@ void loop() {
       //Serial.println(distance);
       //Serial.println();
 
-      if(1 < distance && distance < 50) {
-        int note = i + k;
-        Serial.println("    play_note " + i + k);
+      int note = i + k;
+      /*Serial.print("Note: ");
+      Serial.print(note);
+      Serial.print(" Distance: ");
+      Serial.print(distance);
+      Serial.println();*/
+
+      if(distance < 50) {
+        Serial.print("play_note ");
+        Serial.print(note);
+        Serial.println();
       }
 
-      delay(100);
+      delay(10);
     }
   }
 }
+
