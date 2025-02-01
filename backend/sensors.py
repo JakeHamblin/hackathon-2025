@@ -12,17 +12,17 @@ try:
     GPIO.setmode(GPIO.BOARD)
 
     # Set pins for HC-SR04
-    TRIGS = [7]
+    TRIGS = [7, 13]
     ECHO = 11
 
     GPIO.setup(ECHO, GPIO.IN)
 
     # Initial setup
-    for i in range (0, 1):
+    for i in range (0, 2):
         GPIO.setup(TRIGS[i], GPIO.OUT)
 
     # Trigger and receive pulse
-    for i in range(0, 1):
+    for i in range(0, 2):
         GPIO.output(TRIGS[i], GPIO.LOW)
 
         print("Waiting for sensor to settle")
@@ -46,8 +46,9 @@ try:
         distance = round(pulse_duration * 17150, 2)
         
         if distance < 50:
-            print(f"Play note {i}")
-
+            print(f"Play note {i}: Distance {distance}")
+        
+        time.sleep(2)
 finally:
       GPIO.cleanup()
 
