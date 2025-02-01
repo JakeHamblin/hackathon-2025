@@ -11,17 +11,17 @@ import time
 GPIO.setmode(GPIO.BCM)
 
 # Set pins for HC-SR04
-TRIGS = {0, 0, 0}
-ECHO = 5
+TRIGS = {7}
+ECHO = 11
 
 GPIO.setup(ECHO, GPIO.IN)
 
 # Initial setup
-for i in range (0, 3):
+for i in range (0, 1):
     GPIO.setup(TRIGS[i], GPIO.OUT)
 
 # Trigger and receive pulse
-for i in range(0, 3):
+for i in range(0, 1):
     # Reset trig
     GPIO.output(TRIGS[i], False)
 
@@ -47,5 +47,7 @@ for i in range(0, 3):
     # Convert pulse duration to distance in cm
     # 17150 x time = distance ()
     distance = round((pulse_duration * 17150), 2)
+
+    print(distance)
 
 GPIO.cleanup()
