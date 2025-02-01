@@ -22,9 +22,9 @@ The goal for this project is to create a piano staircase similar to the Boffin p
 Build a three step example of the piano staircase. Use HC-SR04 ultrasonic sensors. Use a Raspberry Pi connected to HC-SR04 sensors.
 
 
-## Connections
+## Two Minute Commercial Video
 
- Speaker
+ https://www.youtube.com/watch?v=cW5cUlfEKmU
 
     ^
 
