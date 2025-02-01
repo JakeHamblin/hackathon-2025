@@ -1,7 +1,5 @@
 # The Holy Schnikes
 
-The goal for this project is to create a piano staircase similar to the Boffin project of the same name.
-
 ## Members
 - Cade Mason
 - Jake Hamblin
@@ -9,17 +7,16 @@ The goal for this project is to create a piano staircase similar to the Boffin p
 - Carter Mansell
 - Tyler Sowards
 
-## Scope
-
-- Gamey
-- Docker
-- Containerized
-- 
-
 ## Goal
 
-Build a three step example of the piano staircase. Use HC-SR04 ultrasonic sensors. Use a Raspberry Pi connected to HC-SR04 sensors.
+Build a three step example of the piano staircase in homage to the Boffin project. 
+Use HC-SR04 ultrasonic sensors. Use a Raspberry Pi connected to HC-SR04 sensors.
 
+Have Fun!
+
+## Future Imrovements
+1. Sleep mode and have motion sensor turn on the system.
+2. Audio Uploader - allow more customization of sounds playing from each step
 
 ## Two Minute Commercial Video
 
