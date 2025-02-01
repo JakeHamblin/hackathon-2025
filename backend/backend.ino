@@ -31,7 +31,7 @@ void loop() {
       //Serial.println(distance);
       //Serial.println();
 
-      if(distance < 50) {
+      if(1 < distance && distance < 50) {
         int note = i + k;
         Serial.println("    play_note " + i + k);
       }
