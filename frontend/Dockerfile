@@ -59,7 +59,7 @@ COPY --from=build /usr/src/app/build ./build
 
 
 # Expose the port that the application listens on.
-EXPOSE 8000 80001
+EXPOSE 5173 8001
 
 # Run the application.
 CMD npm run start
