@@ -1,1 +1,8 @@
-{ "notes": ["Never-gonna-give-you-up.wav", "Never-gonna-let-you-down.wav", "Never-Gonna-Run-Around.wav", "andHurtYou.wav"] }
+{
+  "notes": [
+    "Never-gonna-give-you-up.wav",
+    "duncanLetYouDown.wav",
+    "Never-Gonna-Run-Around.wav",
+    "duncanAndDesertYou.wav"
+  ]
+}
