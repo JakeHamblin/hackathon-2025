@@ -5,6 +5,8 @@ int modules[2][3] = {
   {3, 6, 7},
 };
 
+int already_sent = -1;
+
 void setup() {
   Serial.begin(9600);
   
@@ -38,7 +40,8 @@ void loop() {
       Serial.print(distance);
       Serial.println();*/
 
-      if(distance < 50) {
+      if(distance < 50 && note != already_sent) {
+        already_sent = note;
         Serial.print("play_note ");
         Serial.print(note);
         Serial.println();
