@@ -46,6 +46,6 @@ for i in range(0, 3):
 
     # Convert pulse duration to distance in cm
     # 17150 x time = distance ()
-    distance = pulse_duration * 17150
+    distance = round((pulse_duration * 17150), 2)
 
 GPIO.cleanup()
