@@ -62,4 +62,4 @@ COPY --from=build /usr/src/app/build ./build
 EXPOSE 5173 8001
 
 # Run the application.
-CMD npm run dev
+CMD npm run dev -- --host
