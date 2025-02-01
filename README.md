@@ -2,6 +2,12 @@
 
 The goal for this project is to create a piano staircase similar to the Boffin project of the same name.
 
+## Members
+- Cade Mason
+- Jake Hamblin
+- Joshua Quaintance
+- Carter Mansell
+- Tyler Sowards
 
 ## Scope
 
